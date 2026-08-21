@@ -41,7 +41,7 @@ void printVector(const vector<int>& v) {
     for (size_t i = 0; i < v.size(); i++) {
         cout << v[i] << (i + 1 == v.size() ? "" : " ");
     }
-    cout << endl;
+    cout << "\n";
 }
 
 // 1. PURE LOGIC
@@ -57,7 +57,7 @@ void onlineJudge() {
 
 // 3. LOCAL TESTS
 void runLocalTests() {
-    cout << "=== Test Q4 (Shift Counting in Insertion Sort) ===" << endl << endl;
+    cout << "=== Test Q4 (Shift Counting in Insertion Sort) ===\n\n";
 
     // --- Case 1 ---
     vector<int> test1 = {72, 12, 62, 69, 27, 67, 41, 56, 33, 74};
@@ -69,11 +69,11 @@ void runLocalTests() {
     cout << "Input:           "; printVector(test1);
     cout << "Expected Array:  "; printVector(expVec);
     cout << "Actual Array:    "; printVector(obtained.first);
-    cout << "Expected Shifts: " << expShifts << endl;
-    cout << "Actual Shifts:   " << obtained.second << endl;
+    cout << "Expected Shifts: " << expShifts << "\n";
+    cout << "Actual Shifts:   " << obtained.second << "\n";
 
     bool passed = (obtained.first == expVec && obtained.second == expShifts);
-    cout << (passed ? "[PASSED]" : "[FAILED]") << endl;
+    cout << (passed ? "[PASSED]" : "[FAILED]") << "\n";
 }
 
 int main() {

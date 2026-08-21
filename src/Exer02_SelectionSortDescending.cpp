@@ -40,7 +40,7 @@ void printVector(const vector<int>& v) {
     for (size_t i = 0; i < v.size(); i++) {
         cout << v[i] << (i + 1 == v.size() ? "" : " ");
     }
-    cout << endl;
+    cout << "\n";
 }
 
 // 1. PURE LOGIC
@@ -56,7 +56,7 @@ void onlineJudge() {
 
 // 3. LOCAL TESTS
 void runLocalTests() {
-    cout << "=== Test Q2 (Descending Array Sorting with Selection Sort) ===" << endl << endl;
+    cout << "=== Test Q2 (Descending Array Sorting with Selection Sort) ===\n\n";
 
     // --- Case 1 ---
     vector<int> test1 = {3, 1, 4, 5, 2};
@@ -66,7 +66,7 @@ void runLocalTests() {
     cout << "Input:           "; printVector(test1);
     cout << "Expected Output: "; printVector(expected1);
     cout << "Actual Output:   "; printVector(obtained1);
-    cout << (obtained1 == expected1 ? "[PASSED]" : "[FAILED]") << endl << endl;
+    cout << (obtained1 == expected1 ? "[PASSED]" : "[FAILED]") << "\n\n";
 
     // --- Case 2 ---
     vector<int> test2 = {10, 20, 5, 8, 12, 15};
@@ -76,7 +76,7 @@ void runLocalTests() {
     cout << "Input:           "; printVector(test2);
     cout << "Expected Output: "; printVector(expected2);
     cout << "Actual Output:   "; printVector(obtained2);
-    cout << (obtained2 == expected2 ? "[PASSED]" : "[FAILED]") << endl;
+    cout << (obtained2 == expected2 ? "[PASSED]" : "[FAILED]") << "\n";
 }
 
 int main() {

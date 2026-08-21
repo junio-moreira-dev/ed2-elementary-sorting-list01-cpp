@@ -65,28 +65,27 @@ void onlineJudge() {
 
 // 3. LOCAL TESTS
 void runLocalTests() {
-    // TODO: Implementar assercoes e casos de teste locais
-    cout << "=== Test Q1 (Character Sorting with Bubble Sort) ===" << endl << endl;
+    cout << "=== Test Q1 (Character Sorting with Bubble Sort) ===\n\n";
 
     // --- Case 1 ---
     string test1 = "estrutura";
-    string expected1 = "aerrsttuu";
+    string expected1 = "aeerrsttu";
     string obtained1 = bubbleSortString(test1);
 
-    cout << "Input:           " << test1 << endl;
-    cout << "Expected Output: " << expected1 << endl;
-    cout << "Actual Output:   " << obtained1 << endl;
-    cout << (obtained1 == expected1 ? "[PASSED]" : "[FAILED]") << endl << endl;
+    cout << "Input:           " << test1 << "\n";
+    cout << "Expected Output: " << expected1 << "\n";
+    cout << "Actual Output:   " << obtained1 << "\n";
+    cout << (obtained1 == expected1 ? "[PASSED]" : "[FAILED]") << "\n\n";
 
     // --- Case 2 ---
     string test2 = "patrocinio";
     string expected2 = "aciinooprt";
     string obtained2 = bubbleSortString(test2);
 
-    cout << "Input:           " << test2 << endl;
-    cout << "Expected Output: " << expected2 << endl;
-    cout << "Actual Output:   " << obtained2 << endl;
-    cout << (obtained2 == expected2 ? "[PASSED]" : "[FAILED]") << endl;
+    cout << "Input:           " << test2 << "\n";
+    cout << "Expected Output: " << expected2 << "\n";
+    cout << "Actual Output:   " << obtained2 << "\n";
+    cout << (obtained2 == expected2 ? "[PASSED]" : "[FAILED]") << "\n";
 }
 
 int main() {
