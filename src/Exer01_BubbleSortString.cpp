@@ -1,5 +1,6 @@
 //
 // Created by Juninho Moreira on 18/08/26.
+// Question 1 - Character Sorting in String with Bubble Sort
 //
 
 #include <iostream>
@@ -35,64 +36,45 @@ typedef vector< ii > vii;
 #define PI 2*acos(0)
 
 // 1. PURE LOGIC
-// TODO: Definir a funcao principal de solucao
 string bubbleSortString(string str) {
-    int n = static_cast<int>(str.length());
-
-    for (int i = 0; i < n - 1; i++) {
-        bool swapped = false;
-        for (int j = 0; j < n - i - 1; j++) {
-            if (str[j] > str[j + 1]) {
-                char target = str[j];
-                str[j] = str[j + 1];
-                str[j + 1] = target;
-                swapped = true;
-            }
-        }
-        // Se não houve troca, o vetor já está ordenado!
-        if (!swapped) break;
-    }
+    // TODO: Implement Bubble Sort to order characters in ascending order
     return str;
 }
 
 // 2. ONLINE JUDGE ADAPTER
 void onlineJudge() {
-    // TODO: Leitura de entradas e chamada da solucao para juiz online
-    string s;
-    if (!(cin >> s)) return;
-    cout << bubbleSortString(s) << "\n";
+    // TODO: Read inputs and invoke the solution for the online judge
 }
 
 // 3. LOCAL TESTS
 void runLocalTests() {
-    // TODO: Implementar assercoes e casos de teste locais
-    cout << "=== Test Q1 (Character Sorting with Bubble Sort) ===" << endl << endl;
+    cout << "=== Test Q1 (Character Sorting with Bubble Sort) ===\n\n";
 
     // --- Case 1 ---
     string test1 = "estrutura";
-    string expected1 = "aerrsttuu";
+    string expected1 = "aeerrsttu";
     string obtained1 = bubbleSortString(test1);
 
-    cout << "Input:           " << test1 << endl;
-    cout << "Expected Output: " << expected1 << endl;
-    cout << "Actual Output:   " << obtained1 << endl;
-    cout << (obtained1 == expected1 ? "[PASSED]" : "[FAILED]") << endl << endl;
+    cout << "Input:           " << test1 << "\n";
+    cout << "Expected Output: " << expected1 << "\n";
+    cout << "Actual Output:   " << obtained1 << "\n";
+    cout << (obtained1 == expected1 ? "[PASSED]" : "[FAILED]") << "\n\n";
 
     // --- Case 2 ---
     string test2 = "patrocinio";
     string expected2 = "aciinooprt";
     string obtained2 = bubbleSortString(test2);
 
-    cout << "Input:           " << test2 << endl;
-    cout << "Expected Output: " << expected2 << endl;
-    cout << "Actual Output:   " << obtained2 << endl;
-    cout << (obtained2 == expected2 ? "[PASSED]" : "[FAILED]") << endl;
+    cout << "Input:           " << test2 << "\n";
+    cout << "Expected Output: " << expected2 << "\n";
+    cout << "Actual Output:   " << obtained2 << "\n";
+    cout << (obtained2 == expected2 ? "[PASSED]" : "[FAILED]") << "\n";
 }
 
 int main() {
     IOFAST();
-    runLocalTests();  // <- modo de testes locais
-    // onlineJudge(); // <- modo juiz online
+    runLocalTests();  // <- local testing mode
+    // onlineJudge(); // <- online judge mode
 
     return 0;
 }
