@@ -9,15 +9,36 @@ using namespace std;
 
 class Solution {
 public:
-    // TODO: Implement Bubble Sort to sort characters of string s in ascending order
     string sortString(string s) {
-        // Implementation goes here
+        int n = s.size();
+        for (int i = 0; i < n - 1; ++i) {
+            bool swapped = false;
+            for (int j = 0; j < n - 1 - i; ++j) {
+                if (s[j] > s[j + 1]) {
+                    char temp = s[j];
+                    s[j] = s[j + 1];
+                    s[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+            if (!swapped) {
+                break;
+            }
+        }
         return s;
     }
 };
 
 int main() {
-    // TODO: Instantiate Solution and test with sample strings
+    Solution solver;
+
+    string s1 = "estrutura";
+    cout << "Input:  " << s1 << "\n";
+    cout << "Output: " << solver.sortString(s1) << "\n\n";
+
+    string s2 = "patrocinio";
+    cout << "Input:  " << s2 << "\n";
+    cout << "Output: " << solver.sortString(s2) << "\n";
 
     return 0;
 }
