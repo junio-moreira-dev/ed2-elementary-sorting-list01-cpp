@@ -1,5 +1,5 @@
 //
-// Created by Junio Moreira on 18/08/26.
+// Created by Junio Moreira on 26/08/26.
 //
 
 #include <iostream>
@@ -11,31 +11,16 @@ using namespace std;
 
 typedef long long ll;
 
-// TODO: Implement Insertion Sort in ascending order and return total shifts performed in the while loop
+// TODO: Implement Insertion Sort in ascending order and return total shifts
 ll insertionSortShiftCount(vector<int>& arr) {
-    int n = arr.size();
-    ll shifts = 0;
     // Implementation goes here
-    return shifts;
+    return 0;
 }
 
 int main() {
     FAST_IO;
 
-    int n;
-    while (cin >> n) {
-        vector<int> arr(n);
-        for (int i = 0; i < n; ++i) {
-            cin >> arr[i];
-        }
-
-        ll totalShifts = insertionSortShiftCount(arr);
-
-        for (int i = 0; i < n; ++i) {
-            cout << arr[i] << (i + 1 == n ? '\n' : ' ');
-        }
-        cout << totalShifts << '\n';
-    }
+    // TODO: Read input array, call insertionSortShiftCount, print sorted array and shifts count
 
     return 0;
 }

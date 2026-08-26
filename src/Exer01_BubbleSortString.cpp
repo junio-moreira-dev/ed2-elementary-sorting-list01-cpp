@@ -1,5 +1,5 @@
 //
-// Created by Junio Moreira on 18/08/26.
+// Created by Junio Moreira on 26/08/26.
 //
 
 #include <iostream>
@@ -11,18 +11,13 @@ using namespace std;
 
 // TODO: Implement Bubble Sort to sort characters of string S in ascending order
 void bubbleSortString(string &s) {
-    int n = s.size();
     // Implementation goes here
 }
 
 int main() {
     FAST_IO;
 
-    string s;
-    while (cin >> s) {
-        bubbleSortString(s);
-        cout << s << '\n';
-    }
+    // TODO: Read input string, call bubbleSortString, and print the sorted string
 
     return 0;
 }
