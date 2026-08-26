@@ -13,14 +13,16 @@ Exercícios de fixação de **Estrutura de Dados II** — Algoritmos de ordenaç
 
 ```
 ed2-sorting-list01-cpp/
-├── CMakeLists.txt
-├── README.md
 └── src/
     ├── Exer01_BubbleSortString.cpp
     ├── Exer02_SelectionSortDesc.cpp
     ├── Exer03_SelectionSortKSwaps.cpp
     ├── Exer04_InsertionSortCountShifts.cpp
     └── Exer05_InsertionSortDescFromEnd.cpp
+├── .gitignore
+├── CMakeLists.txt
+├── main.cpp
+└── README.md
 ```
 
 Cada arquivo `.cpp` é **autônomo** (tem sua própria `main()`) e é compilado como um executável independente. Todos seguem o mesmo padrão de três blocos:
