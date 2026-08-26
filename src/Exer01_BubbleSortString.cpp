@@ -9,15 +9,32 @@ using namespace std;
 
 #define FAST_IO ios_base::sync_with_stdio(false); cin.tie(NULL);
 
-// TODO: Implement Bubble Sort to sort characters of string S in ascending order
 void bubbleSortString(string &s) {
-    // Implementation goes here
+    int n = s.size();
+    for (int i = 0; i < n - 1; ++i) {
+        bool swapped = false;
+        for (int j = 0; j < n - 1 - i; ++j) {
+            if (s[j] > s[j + 1]) {
+                char temp = s[j];
+                s[j] = s[j + 1];
+                s[j + 1] = temp;
+                swapped = true;
+            }
+        }
+        if (!swapped) {
+            break;
+        }
+    }
 }
 
 int main() {
     FAST_IO;
 
-    // TODO: Read input string, call bubbleSortString, and print the sorted string
+    string s;
+    while (cin >> s) {
+        bubbleSortString(s);
+        cout << s << '\n';
+    }
 
     return 0;
 }
