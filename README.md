@@ -1,161 +1,163 @@
-# ED2 — Sorting — Lista 01
+# ED2 — Sorting — List 03
 
-Exercícios de fixação de **Estrutura de Dados II** — Algoritmos de ordenação (Bubble Sort, Selection Sort, Insertion Sort) e suas variações.
+Practice exercises for **Data Structures II** — Sorting algorithms (Bubble Sort, Selection Sort, Insertion Sort) and their variations.
 
 > Instituto Federal do Triângulo Mineiro — Campus Patrocínio
-> Curso: Tecnologia em Análise e Desenvolvimento de Sistemas — 4º Período
-> Professor: Júnio Moreira
-> Data: 12/08/2026 · **Entrega: 26/08/2026**
+> Course: Technology in Systems Analysis and Development — 4th Term
+> Instructor: Júnio Moreira
+> Date: 08/26/2026 · **Due: 09/09/2026**
 
 ---
 
-## 📁 Estrutura do Projeto
+## 📁 Project Structure
 
 ```
-ed2-sorting-list01-cpp/
+ed2-sorting-list03-cpp/
 └── src/
-    ├── Exer01_BubbleSortString.cpp
-    ├── Exer02_SelectionSortDesc.cpp
-    ├── Exer03_SelectionSortKSwaps.cpp
-    ├── Exer04_InsertionSortCountShifts.cpp
-    └── Exer05_InsertionSortDescFromEnd.cpp
+    ├── Exer01_BubbleSortCountSwaps.cpp
+    ├── Exer02_SelectionSortKSmallest.cpp
+    ├── Exer03_InsertionSortKSortedCountComparisons.cpp
+    ├── Exer04_BubbleSortParitySort.cpp
+    └── Exer05_InsertionSortCountInversions.cpp
 ├── .gitignore
 ├── CMakeLists.txt
 ├── main.cpp
 └── README.md
 ```
 
-Cada arquivo `.cpp` é **autônomo** (tem sua própria `main()`) e é compilado como um executável independente. Todos seguem o mesmo padrão de três blocos:
+Each `.cpp` file is **standalone** (has its own `main()`) and is compiled as an independent executable. All of them follow the same three-block pattern:
 
-| Bloco | Responsabilidade |
+| Block | Responsibility |
 |---|---|
-| **Lógica pura** | Implementa o algoritmo em si, usando STL (`vector`, `string`, etc). Não faz `cin`/`cout`. |
-| `onlineJudge()` | Adaptador: lê a entrada com `cin`, chama a lógica pura, imprime com `cout`. |
-| `runExer...()` | Roda os exemplos do enunciado localmente e compara com o gabarito (`[PASSOU]` / `[FALHOU]`). |
+| **Pure logic** | Implements the algorithm itself, using STL (`vector`, `string`, etc). Does not perform `cin`/`cout`. |
+| `onlineJudge()` | Adapter: reads input with `cin`, calls the pure logic, prints with `cout`. |
+| `runExer...()` | Runs the examples from the statement locally and compares against the expected output (`[PASSED]` / `[FAILED]`). |
 
 ---
 
-## 📝 Exercícios
+## 📝 Exercises
 
-| # | Arquivo | Problema | Técnica | Complexidade |
+| # | File | Problem | Technique | Complexity |
 |---|---|---|---|---|
-| 1 | `Exer01_BubbleSortString.cpp` | Ordenar caracteres de uma string alfabeticamente | Bubble Sort | O(n²) |
-| 2 | `Exer02_SelectionSortDesc.cpp` | Ordenar vetor em ordem decrescente | Selection Sort (variação) | O(n²) |
-| 3 | `Exer03_SelectionSortKSwaps.cpp` | Estado do vetor após k trocas do Selection Sort | Selection Sort (simulação parcial) | O(k·n) |
-| 4 | `Exer04_InsertionSortCountShifts.cpp` | Ordenar e contar deslocamentos no `while` | Insertion Sort (instrumentado) | O(n²) |
-| 5 | `Exer05_InsertionSortDescFromEnd.cpp` | Ordenar decrescente construindo do fim para o início | Insertion Sort (variação) | O(n²) |
+| 1 | `Exer01_BubbleSortCountSwaps.cpp` | Sort array ascending and count total swaps | Bubble Sort (instrumented) | O(n²) |
+| 2 | `Exer02_SelectionSortKSmallest.cpp` | Select the k smallest elements via k iterations of the outer loop | Selection Sort (partial simulation) | O(k·n) |
+| 3 | `Exer03_InsertionSortKSortedCountComparisons.cpp` | Sort a k-sorted array and count comparisons in the `while` loop | Insertion Sort (k-sorted, instrumented) | O(n·k) |
+| 4 | `Exer04_BubbleSortParitySort.cpp` | Even numbers ascending before odd numbers descending | Bubble Sort (custom comparator) | O(n²) |
+| 5 | `Exer05_InsertionSortCountInversions.cpp` | Count inversions via Insertion Sort shifts | Insertion Sort (inversion counting) | O(n²) |
 
 <details>
-<summary><strong>Detalhes de cada exercício (entrada, saída e exemplo)</strong></summary>
+<summary><strong>Details for each exercise (input, output, and example)</strong></summary>
 
-### 1. Ordenação de Caracteres em String com Bubble Sort
-**Entrada:** string `S` de tamanho N, composta por letras minúsculas.
-**Saída:** a string com os caracteres ordenados alfabeticamente. **Deve usar estritamente Bubble Sort.**
-
-```
-Entrada          Saída
-estrutura        aeerrsttu
-```
-
-### 2. Ordenação Decrescente de Vetor com Selection Sort
-**Entrada:** N e o vetor `V`.
-**Saída:** o vetor ordenado em ordem **decrescente**, usando a lógica do Selection Sort (selecionar o maior da sublista não ordenada a cada passo).
+### 1. Counting Swaps in Bubble Sort
+**Input:** N (1 ≤ N ≤ 10⁴) and an array `A` of N integers.
+**Output:** first line with the array sorted ascending; second line with the **total number of swaps** performed during the entire traditional Bubble Sort process.
 
 ```
-Entrada          Saída
-5                5 4 3 2 1
-3 1 4 5 2
+Input            Output
+5                1 2 3 4 5
+4 3 2 1 5        6
 ```
 
-### 3. Simulação Parcial do Selection Sort com k Trocas
-**Entrada:** N, k e o vetor `A`.
-**Saída:** o estado do vetor imediatamente após executar as **primeiras k trocas** do Selection Sort padrão (crescente).
+### 2. Selecting the k Smallest Elements via Selection Sort
+**Input:** N, k (1 ≤ k ≤ N) and an array `A`.
+**Output:** the **k smallest elements**, in ascending order, after running **strictly the first k iterations** of Selection Sort's outer loop (relies on the invariant that after k iterations, the k smallest elements are already placed at indices 0..k-1).
 
 ```
-Entrada          Saída
-5 2              13 14 29 37 64
-29 64 14 37 13
+Input                Output
+6 3                  10 13 14
+29 10 14 37 13 42
 ```
 
-### 4. Contagem de Deslocamentos no Insertion Sort
-**Entrada:** N (fixo em 10) e o vetor de 10 elementos.
-**Saída:** primeira linha com o vetor ordenado crescente; segunda linha com o **total de cópias/deslocamentos** realizados dentro do `while` (`array[j+1] = array[j]`).
+### 3. Sorting a Nearly-Sorted (k-Sorted) Array with Insertion Sort
+**Input:** N, k (0 ≤ k ≤ N, the maximum distance of any element from its final position) and the k-sorted array `A`.
+**Output:** first line with the fully sorted ascending array; second line with the **total number of comparisons** performed in Insertion Sort's inner `while` loop.
 
 ```
-Entrada                              Saída
-10                                    12 27 33 41 56 62 67 69 72 74
-72 12 62 69 27 67 41 56 33 74         26
+Input                Output
+6 2                  1 2 3 4 5 6
+3 2 1 5 4 6          8
 ```
 
-### 5. Insertion Sort com Sublista Ordenada no Final
-**Entrada:** N e o vetor.
-**Saída:** o vetor ordenado em ordem **decrescente**, construindo a sublista ordenada a partir do **final** do vetor em direção ao início (percorrendo da direita para a esquerda).
+### 4. Two-Phase Parity Sort with Bubble Sort
+**Input:** N and an array `A`.
+**Output:** a single line with the array reorganized according to the composite criterion: (1) even numbers before odd numbers; (2) even numbers in **ascending** order among themselves; (3) odd numbers in **descending** order among themselves. **Must adapt Bubble Sort's comparison logic**, not use `sort` with a ready-made comparator.
 
 ```
-Entrada          Saída
-6                12 9 7 5 3 1
-12 7 9 1 5 3
+Input                    Output
+8                        2 4 6 8 9 5 3 1
+5 2 9 8 1 6 3 4
+```
+
+### 5. Counting Inversions via Insertion Sort Simulation
+**Input:** N and an array `A` of **distinct** positive integers.
+**Output:** a single integer with the total number of inversions (pairs i < j where A[i] > A[j]), equivalent to the total number of right shifts performed by Insertion Sort.
+
+```
+Input            Output
+5                3
+2 4 1 3 5
 ```
 
 </details>
 
 ---
 
-## 🚀 Como Executar no CLion
+## 🚀 Running in CLion
 
-1. Abra o projeto e recarregue o CMake (**Reload CMake Project**, ícone de sincronizar que aparece ao editar o `CMakeLists.txt`).
-2. No seletor de alvos de execução (topo da janela), escolha o exercício desejado.
-3. Clique em **Run** (▶) ou **Debug** (🐞).
+1. Open the project and reload CMake (**Reload CMake Project**, the sync icon that appears when you edit `CMakeLists.txt`).
+2. In the run target selector (top of the window), choose the desired exercise.
+3. Click **Run** (▶) or **Debug** (🐞).
 
-> **Dica:** cada arquivo alterna entre dois modos dentro do `int main()`:
-> - **Modo teste local** (padrão): roda `runExer...()` com os exemplos do enunciado.
-> - **Modo juiz online**: comente a chamada de `runExer...()` e descomente `onlineJudge()` antes de submeter no juiz.
+> **Tip:** each file toggles between two modes inside `int main()`:
+> - **Local test mode** (default): runs `runExer...()` with the examples from the statement.
+> - **Online judge mode**: comment out the `runExer...()` call and uncomment `onlineJudge()` before submitting to the judge.
 
 ```cpp
 int main() {
-    runExer01BubbleSortString();  // <- modo teste local (ativo)
-    // onlineJudge();             // <- modo juiz online (comentado)
+    runExer01BubbleSortCountSwaps();  // <- local test mode (active)
+    // onlineJudge();                 // <- online judge mode (commented)
     return 0;
 }
 ```
 
 ---
 
-## 💻 Como Executar pelo Terminal (sem CLion)
+## 💻 Running from the Terminal (without CLion)
 
-Caso prefira compilar manualmente com `g++`:
+If you prefer to compile manually with `g++`:
 
 ```bash
-g++ -std=c++17 -Wall -Wextra -o exer01 src/Exer01_BubbleSortString.cpp
+g++ -std=c++17 -Wall -Wextra -o exer01 src/Exer01_BubbleSortCountSwaps.cpp
 ./exer01
 ```
 
-Para testar o modo juiz online via terminal, redirecione um arquivo de entrada:
+To test online judge mode from the terminal, redirect an input file:
 
 ```bash
-echo "estrutura" | ./exer01
+echo "5
+4 3 2 1 5" | ./exer01
 ```
 
 ---
 
-## ⚠️ Atenção ao enunciado
+## ⚠️ Watch Out For
 
-- **Questão 1** exige explicitamente o uso do **Bubble Sort** — não use `std::sort` ou outro algoritmo, mesmo que dê o resultado certo.
-- **Questão 2** é uma *variação* do Selection Sort (busca o **maior**, não o menor) — implemente a lógica manualmente, não use `sort` com comparador decrescente.
-- **Questão 3** pede o estado **intermediário** do vetor, não o vetor totalmente ordenado — cuidado para não rodar o algoritmo completo.
-- **Questão 4** exige contar deslocamentos **apenas** dentro do `while` interno do Insertion Sort — não contar comparações nem outras atribuições.
-- **Questão 5** constrói a sublista ordenada a partir do **fim** do vetor — a lógica de inserção é espelhada em relação ao Insertion Sort tradicional.
+- **Question 1** requires the traditional Bubble Sort — count **only** the swaps between adjacent elements, don't confuse this with the number of comparisons.
+- **Question 2** asks for the state after **exactly k iterations** of Selection Sort's outer loop — don't run the full algorithm, just return the k elements already placed.
+- **Question 3** requires counting **comparisons** (not shifts) made inside Insertion Sort's `while` loop; the k-sorted property is just efficiency context and doesn't need to be explicitly validated.
+- **Question 4** requires adapting Bubble Sort's comparison logic for the composite parity criterion (even ascending < odd descending) — implement the comparison manually, don't split into two lists sorted with `sort`.
+- **Question 5** counts inversions via Insertion Sort simulation — the array has **distinct** elements, which simplifies the comparison logic (no ties).
 
 ---
 
-## ✅ Pré-requisitos
+## ✅ Prerequisites
 
-- Compilador C++17 ou superior (GCC, Clang ou MSVC)
+- C++17-compliant compiler or newer (GCC, Clang, or MSVC)
 - CMake ≥ 3.20
-- CLion (recomendado) ou qualquer IDE/editor de sua preferência
+- CLion (recommended) or any IDE/editor of your choice
 
 ---
 
-## 📚 Referência
+## 📚 Reference
 
-Lista de exercícios original: *Exercícios de Fixação — Estrutura de Dados II* (12/08/2026 · entrega 26/08/2026).
+Original exercise list: *Practice Exercises — Data Structures II* (08/26/2026 · due 09/09/2026).
